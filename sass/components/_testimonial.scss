@@ -1,0 +1,93 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.testimonial_part {
+  .testimonial_bg {
+    background-color: #F7F7F9;
+    max-width: 1510px;
+    padding: 80px 0 0 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+
+    .testi_shape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: float-bob-x 2s infinite linear;
+    }
+
+    .testimonial_main {
+      border-bottom: 1px solid #E9E9EE;
+      padding-bottom: 80px;
+
+      .image {
+        position: relative;
+
+        .img {
+          width: 170px;
+          height: 170px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto;
+        }
+
+        ul {
+          position: absolute;
+          left: 50%;
+          bottom: -80px;
+          transform: translateX(-50%);
+
+          li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: $light;
+            border-radius: 50%;
+            margin: 0 2px;
+          }
+
+          li.active {
+            background-color: $primary;
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .text {
+        p {
+          @include font(28px, 00);
+          line-height: 50px;
+          color: $black;
+          margin-bottom: 30px;
+        }
+
+        .client {
+          h4 {
+            @include font(18px, 700);
+            color: $primary;
+            margin-bottom: 5px;
+          }
+
+          span {
+            color: $light;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes float-bob-x {
+  0% {
+    transform: translateX(-30px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(-30px);
+  }
+}

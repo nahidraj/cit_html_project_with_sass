@@ -1,0 +1,163 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0 !important;
+}
+
+nav {
+  .container-fluid {
+    padding: 0 80px;
+  }
+
+  .navbar-brand {
+    margin-right: 140px;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin-left: 40px;
+      padding: 30px 0;
+      position: relative;
+
+      a {
+        @include font(16px !important, 400 !important);
+        color: $light !important;
+        transition: all linear .2s;
+        line-height: 50px;
+
+        &::before {
+          position: absolute;
+          bottom: 24px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $primary;
+          content: "";
+          transition: all linear .3s;
+        }
+      }
+
+      &:hover {
+        a {
+          color: $black !important;
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+
+      a.active {
+        color: $black !important;
+
+        &::before {
+          width: 100%;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .dropdown_menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $white;
+        box-shadow: 0px 0px 65px 0px rgba(0, 0, 0, 0.1);
+        min-width: 220px;
+        margin-top: 30px;
+        transition: all 0.3s ease 0s;
+        visibility: hidden;
+        opacity: 0;
+
+        li {
+          a {
+            padding: 0 24px;
+            display: block;
+
+            &:hover {
+              background-color: $primary;
+              color: $white !important;
+            }
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &:hover> {
+        .dropdown_menu {
+          margin-top: 0;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .menu_search_call {
+    .call {
+
+      .icon {
+        margin-right: 14px;
+      }
+
+      .number {
+        span {
+          @include font(14px, 400);
+          color: $light;
+        }
+
+        h6 {
+          @include font(16px, 500);
+          color: $light;
+          margin-top: 2px;
+
+          a {
+            color: $black;
+            transition: all linear .2s;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    .search {
+      padding-left: 40px;
+      margin-left: 40px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        width: 1px;
+        height: 42px;
+        background-color: #E9E9EE;
+        content: "";
+      }
+
+      button {
+        background-color: transparent;
+        border: 0;
+        margin-top: 14px;
+
+        i {
+          font-size: 22px;
+          color: $light;
+        }
+      }
+    }
+  }
+}

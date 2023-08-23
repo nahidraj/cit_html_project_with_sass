@@ -1,0 +1,25 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.banner_bottom {
+  background-color: $primary;
+  padding: 40px 0;
+
+  .text {
+    p {
+      color: $white;
+      @include font(18px, 500);
+
+      a {
+        @include font(18px, 700);
+        color: $white;
+        border-bottom: 2px solid $secondary;
+        transition: all linear .2s;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}

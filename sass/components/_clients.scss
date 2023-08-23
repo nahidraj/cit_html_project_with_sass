@@ -1,0 +1,40 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.client {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  .client_title {
+    border-bottom: 1px solid #E9E9EE;
+    text-align: center;
+
+    h4 {
+      display: inline-block;
+      @include font(20px, 700);
+      background-color: $white;
+      padding: 8px 20px;
+      position: relative;
+      bottom: -19px;
+    }
+  }
+
+  .client_main {
+    padding-top: 80px;
+  }
+
+  .image {
+    text-align: center;
+
+    img {
+      opacity: 0.15;
+      transition: all linear .2s;
+    }
+
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}

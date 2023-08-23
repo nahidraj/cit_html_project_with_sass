@@ -1,0 +1,73 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.service_part {
+  padding-top: 80px;
+
+  .service_bg {
+    padding: 80px 0;
+    background-color: $black;
+
+    .service_text {
+      p {
+        line-height: 30px;
+        color: $light_para;
+      }
+    }
+
+    .service_main {
+      padding-top: 60px;
+
+      ul {
+        display: flex;
+        margin-left: -15px;
+        margin-right: -15px;
+
+        li {
+          width: 20%;
+          padding-left: 15px;
+          padding-right: 15px;
+
+          .service_item {
+            border: 1px solid #322d3b;
+            padding: 20px;
+            width: 100%;
+            transition: all 500ms ease;
+            text-align: center;
+
+            .icon {
+              i {
+                font-size: 50px;
+                color: $primary;
+              }
+            }
+
+            .text {
+
+              a {
+                @include font(20px, 700);
+                color: $white;
+                transition: all .3s;
+                line-height: 26px;
+                margin-bottom: 24px;
+                margin-top: 20px;
+              }
+            }
+          }
+
+          &:hover {
+            .service_item {
+              background-color: $white;
+              border-color: $white;
+              margin-top: -10px;
+
+              a {
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

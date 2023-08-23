@@ -1,0 +1,99 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.project {
+  padding-top: 80px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #F7F7F9;
+    width: 1510px;
+    height: 60%;
+    padding: 80px 0 0 0;
+    margin: 0 auto;
+    content: "";
+    z-index: -1;
+  }
+
+  .project_main {
+    margin-top: 60px;
+  }
+}
+
+.project_item {
+  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
+  background-color: $white;
+
+  .image {
+    overflow: hidden;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  .text {
+    padding: 40px 50px 50px;
+
+    span {
+      color: #9782a2;
+    }
+
+    a.title {
+      @include font(22px, 700);
+      line-height: 30px;
+      color: $black;
+      margin: 4px 0 10px 0;
+      transition: all linear .2s;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    .action_btn {
+      a {
+        padding: 14px 40px;
+        background-color: #f7f7f7;
+        color: #9782a2;
+        width: 100%;
+        transition: all linear .2s;
+      }
+    }
+  }
+
+  &:hover {
+    .text {
+      .action_btn {
+        a {
+          color: $white;
+
+          &::before {
+            background-color: #8293A2 !important;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .image {
+      img {
+        mix-blend-mode: luminosity;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

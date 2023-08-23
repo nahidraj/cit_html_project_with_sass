@@ -1,0 +1,105 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.counter {
+  padding-top: 80px;
+}
+
+.counter_bg {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-blend-mode: luminosity;
+
+  .overlay {
+    padding: 80px 0;
+    background-color: rgba(247, 247, 249, 0.9);
+  }
+}
+
+.counter_item {
+  padding: 0 30px;
+  position: relative;
+
+  &::before {
+    width: 1px;
+    height: 160px;
+    background-color: #E9E9EE;
+    position: absolute;
+    right: -14px;
+    top: 60px;
+    content: "";
+  }
+
+  .icon {
+    width: 75px;
+    height: 75px;
+    background-color: $white;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 26px;
+    color: $primary;
+    position: relative;
+    z-index: 99;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $primary;
+      top: 0;
+      left: 0;
+      content: "";
+      border-radius: 50%;
+      z-index: -1;
+      transform: scale(0);
+      transition: all 0.4s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+    }
+
+    i {
+      transform: scale(1) rotateY(0deg);
+      transition: all 500ms linear;
+      transition-delay: 0.2s;
+    }
+  }
+
+  .text {
+    h3 {
+      @include font(40px, 500);
+      color: $secondary;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      @include font(18px, 700);
+      margin-bottom: 14px;
+    }
+  }
+
+  &:hover {
+    .icon {
+      i {
+        color: $white;
+        transform: scale(0.9) rotateY(360deg);
+      }
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.number_of_counter {
+  &:last-child {
+    .counter_item {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
