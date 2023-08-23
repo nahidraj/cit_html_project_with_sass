@@ -966,15 +966,15 @@ nav .menu_search_call .search button i {
   transform: scaleY(1);
 }
 
-.client {
+.client_part {
   padding-top: 80px;
   padding-bottom: 80px;
 }
-.client .client_title {
+.client_part .client_title {
   border-bottom: 1px solid #E9E9EE;
   text-align: center;
 }
-.client .client_title h4 {
+.client_part .client_title h4 {
   display: inline-block;
   font-size: 20px;
   font-weight: 700;
@@ -983,17 +983,17 @@ nav .menu_search_call .search button i {
   position: relative;
   bottom: -19px;
 }
-.client .client_main {
+.client_part .client_main {
   padding-top: 80px;
 }
-.client .image {
+.client_part .image {
   text-align: center;
 }
-.client .image img {
+.client_part .image img {
   opacity: 0.15;
   transition: all linear 0.2s;
 }
-.client .image:hover img {
+.client_part .image:hover img {
   opacity: 1;
 }
 
