@@ -1,0 +1,264 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.service-details-page {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  .left-sidebar {
+    position: sticky;
+    top: 20px;
+    bottom: 0;
+
+    .service-menu {
+      background-color: #f2f2f2;
+      padding: 24px;
+
+      .title {
+        @include font(20px, 700);
+        margin-bottom: 20px;
+      }
+
+      ul {
+        li {
+          margin: 4px 0px;
+
+          a {
+            display: block;
+            @include font(16px, 500);
+            color: $light;
+            padding: 12px 20px;
+            transition: all linear .2s;
+
+            i {
+              font-size: 12px;
+              margin-top: 6px;
+              transition: all linear .2s;
+              transform: scale(0);
+            }
+
+            &:hover {
+              background-color: $white;
+              color: $black;
+
+              i {
+                transform: scale(1);
+              }
+            }
+          }
+
+          a.active {
+            background-color: $white;
+            color: $black;
+
+            i {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+
+    .service-details-help {
+      margin-top: 30px;
+
+      .overlay {
+        background-color: rgba(27, 21, 37, 0.4);
+        padding: 50px 40px;
+        text-align: center;
+
+        .icon {
+          width: 80px;
+          height: 80px;
+          text-align: center;
+          line-height: 80px;
+          background-color: $white;
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+
+        .text {
+          margin-top: 30px;
+
+          h4 {
+            @include font(26px, 700);
+            color: $white;
+            margin-bottom: 40px;
+          }
+
+          small {
+            color: $white;
+          }
+
+          p {
+            color: $white;
+            font-weight: 500;
+
+            a {
+              color: $white;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+
+    .download-flyer {
+      margin-top: 30px;
+
+      .common_btn {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  .right-sidebar {
+    .information {
+      margin-top: 40px;
+
+      .title {
+        @include font(38px, 700);
+        margin-bottom: 30px;
+      }
+
+      .sub_title {
+        margin: 30px 0;
+        @include font(20px, 700);
+        color: $primary;
+        line-height: 30px;
+      }
+
+      .service-point-main {
+        margin: 40px 0;
+
+        .service-point {
+          .icon {
+            width: 80px;
+            height: 80px;
+            background-color: $primary;
+            text-align: center;
+            line-height: 80px;
+            border-radius: 50%;
+            font-size: 28px;
+            color: $white;
+            margin: 0 auto;
+            transition: all linear .2s;
+          }
+
+          .text {
+            h4 {
+              margin-top: 20px;
+              @include font(18px, 700);
+              margin-bottom: 8px;
+            }
+          }
+
+          &:hover {
+            .icon {
+              background-color: $secondary;
+            }
+          }
+        }
+      }
+
+      .service-point-bg {
+        background-color: #f2f2f2;
+        padding: 40px 30px;
+
+        h4 {
+          @include font(18px, 700);
+          margin-bottom: 14px;
+        }
+      }
+
+      .service-benifits {
+        margin-top: 40px;
+
+        .text {
+          h3 {
+            @include font(24px, 700);
+            margin-bottom: 24px;
+          }
+
+          h5 {
+            @include font(18px, 700);
+            line-height: 28px;
+            margin-bottom: 30px;
+            color: $secondary;
+          }
+
+          ul {
+            li {
+              position: relative;
+              padding-left: 22px;
+              margin-bottom: 8px;
+
+              i {
+                position: absolute;
+                top: 6px;
+                left: 0;
+                font-size: 15px;
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+
+      .service-faq {
+        border: 1px solid #ddd;
+        padding: 30px 50px;
+        margin-top: 40px;
+
+        .accordion-item:first-of-type .accordion-button {
+          background: none;
+        }
+
+        .accordion-item {
+          border: 0;
+          border-bottom: 1px solid #ddd;
+
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+
+        .accordion-body {
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+        }
+
+        .accordion-button {
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          @include font(18px, 600);
+        }
+
+        .accordion-button:not(.collapsed) {
+          background: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+          color: $primary !important;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+          background-image: none;
+          content: "\f146";
+          font-family: "Font Awesome 5 Free";
+          transform: unset;
+        }
+
+        .accordion-button::after {
+          background-image: none;
+          content: "\f0fe";
+          font-family: "Font Awesome 5 Free";
+          transform: unset;
+        }
+      }
+    }
+  }
+}

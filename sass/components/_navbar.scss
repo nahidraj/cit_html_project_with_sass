@@ -3,6 +3,8 @@
 
 .navbar {
   padding: 0;
+  width: 100% !important;
+  z-index: 999;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -29,6 +31,13 @@ nav {
         color: $light !important;
         transition: all linear .2s;
         line-height: 50px;
+
+        i {
+          font-size: 12px;
+          margin-left: 2px;
+          position: relative;
+          top: -2px;
+        }
 
         &::before {
           position: absolute;

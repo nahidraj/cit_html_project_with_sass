@@ -1,0 +1,53 @@
+@import "../variables/colors";
+@import "../mixin/font";
+
+.bread-crumb {
+  padding: 100px 0;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-color: #000;
+  background-blend-mode: luminosity;
+
+  .text {
+    ul {
+      margin-bottom: 10px;
+
+      li {
+        display: inline-block;
+        color: $secondary;
+        margin: 0 8px;
+        padding: 0 8px;
+        font-weight: 600;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -15px;
+          content: "/";
+        }
+
+        a {
+          color: $secondary;
+          transition: all linear .2s;
+
+          &:hover {
+            color: $white;
+          }
+        }
+
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    h2 {
+      @include font(42px, 700);
+      color: $white;
+    }
+  }
+}
